@@ -1,3 +1,4 @@
+#!/bin/bash
 docker cp sqlNode1:/var/opt/mssql/crts/dbm_certificate_1401.cer .
 docker cp sqlNode1:/var/opt/mssql/crts/dbm_certificate_1401.pvk .
 docker cp sqlNode2:/var/opt/mssql/crts/dbm_certificate_1402.cer .

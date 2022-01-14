@@ -1,3 +1,4 @@
+#!/bin/bash
 /opt/mssql-tools/bin/sqlcmd -S "127.0.0.1,1401" -d "master" -U SA -P "Passw0rd" -Q "
 CREATE CERTIFICATE dbm_certificate_1402  
     AUTHORIZATION dbm_user

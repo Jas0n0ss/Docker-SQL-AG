@@ -1,3 +1,4 @@
+#!/bin/bash
 for port in {1401..1403}
 do
 /opt/mssql-tools/bin/sqlcmd -S "127.0.0.1,$port" -d "master" -U SA -P "Passw0rd" -Q "

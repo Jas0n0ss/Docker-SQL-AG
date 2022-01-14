@@ -1,3 +1,4 @@
+#!/bin/bash
 /opt/mssql-tools/bin/sqlcmd -S "127.0.0.1,1403" \
 	-d "master" \
 	-U SA \

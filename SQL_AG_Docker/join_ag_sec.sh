@@ -1,3 +1,4 @@
+#!/bin/bash
 /opt/mssql-tools/bin/sqlcmd -S "127.0.0.1,1402" -d "master" -U SA -P "Passw0rd" -Q "
 ALTER AVAILABILITY GROUP [AG] JOIN WITH (CLUSTER_TYPE = NONE);
 GO
