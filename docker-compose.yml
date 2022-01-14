@@ -1,0 +1,64 @@
+version: '3'
+ 
+services:
+  db1:
+    container_name: sqlNode1
+    image: sql2017:ag
+    hostname: sqlNode1
+    domainname: ms.com
+    environment:
+      SA_PASSWORD: "<Password>"
+      ACCEPT_EULA: "Y"
+    ports:
+    - "1401:1433"
+    - "1521:5022"
+    extra_hosts:
+      sqlNode2.ms.com: "172.16.238.22"
+      sqlNode3.ms.com: "172.16.238.23"
+    networks:
+        internal:
+                ipv4_address: 172.16.238.21
+ 
+  db2:
+    container_name: sqlNode2
+    image: sql2017:ag
+    hostname: sqlNode2
+    domainname: ms.com
+    environment:
+      SA_PASSWORD: "<Password>"
+      ACCEPT_EULA: "Y"
+    ports:
+    - "1402:1433"
+    - "1522:5022"
+    extra_hosts:
+      sqlNode1.ms.com: "172.16.238.21"
+      sqlNode3.ms.com: "172.16.238.23"
+    networks:
+        internal:
+                ipv4_address: 172.16.238.22
+ 
+  db3:
+    container_name: sqlNode3
+    image: sql2017:ag
+    hostname: sqlNode3
+    domainname: ms.com
+    environment:
+      SA_PASSWORD: "<Password>"
+      ACCEPT_EULA: "Y"
+    ports:
+    - "1403:1433"
+    - "1523:5022"
+    extra_hosts:
+      sqlNode1.ms.com: "172.16.238.21"
+      sqlNode2.ms.com: "172.16.238.22"
+    networks:
+        internal:
+                ipv4_address: 172.16.238.23
+ 
+networks:
+    internal:
+       driver: bridge
+       ipam:
+         driver: default
+         config:
+           - subnet: 172.16.238.0/24
