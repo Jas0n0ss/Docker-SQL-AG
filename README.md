@@ -5,13 +5,12 @@
 
 - Build image with Dockerfile just created [create_ha_image.sh](SQL_AG_Docker/create_ha_image.sh)
 
-- Create `docker-compsoe.yml` to create 3 nodes
+- Create `docker-compsoe.yml` to create 3 nodes [docker-compose.yml](SQL_AG_Docker/docker-compose.yml)
 
 - Create the SQL server nodes with the image which with HA feather 
 
-  `docker-compose up -d`
-
   ```bash
+  [root@node3 /mnt/sqlha_ag 10:57]# docker-compose up -d
   [root@node3 /mnt/sqlha_ag 10:57]# docker-compose ps
     Name                Command               State                                         Ports
   --------------------------------------------------------------------------------------------------------------------------------------
