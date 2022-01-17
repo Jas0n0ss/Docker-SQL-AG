@@ -1,5 +1,10 @@
 # SQL Server AG with 3 Nodes on Docker
 ---
+## Environment
+- 3 Nodes
+  - Node1: sqlNode1 1401->1433 1521->5022 (Primary Node)
+  - Node2: sqlNode1 1402->1433 1522->5022 (Secondary Node)
+  - Node3: sqlNode1 1403->1433 1523->5022 (Secondary Node)
 ## STEPS
 - Prepare the Dockerfile with HA feather [Dockerfile](SQL_AG_Docker/Dockerfile)
 
